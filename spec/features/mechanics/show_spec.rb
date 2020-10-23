@@ -42,10 +42,10 @@ describe "When I visit a mechanics show page I see the mechanic's info" do
     expect(page).to have_content(coaster.name)
     expect(page).to_not have_content(spinny.name)
 
-    fill_in :add_ride, with: spinny.id
+    fill_in :ride_id, with: spinny.id
     click_button "Submit"
 
-    expect(current_path).to eq("mechanics/#{roy.id}")
+    expect(current_path).to eq("/mechanics/#{roy.id}")
     expect(page).to have_content(spinny.name)
   end
 end
