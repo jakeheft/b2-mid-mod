@@ -22,12 +22,12 @@ describe "When I visit an amusement park's show page" do
       amusement_park_id: adventureland.id
     )
     visit "/amusement_parks/#{adventureland.id}"
-save_and_open_page
+    
     expect(page).to have_content(adventureland.name)
     expect(page).to have_content("Admissions: $#{adventureland.price}")
     expect(page).to have_content(comet.name)
     expect(page).to have_content(coaster.name)
     expect(page).to have_content(spinny.name)
-    expect(page).to have_content("Average Thrill Rating of Rides: #{average_thrill.round(1)}/10")
+    expect(page).to have_content("Average Thrill Rating of Rides: #{adventureland.average_thrill.round(1)}/10")
   end
 end
