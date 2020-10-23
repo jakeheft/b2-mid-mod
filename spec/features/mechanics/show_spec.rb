@@ -89,7 +89,7 @@ describe "On the mechanic show page" do
     )
 
     visit "mechanics/#{roy.id}"
-save_and_open_page
+    
     expect(page.all('li')[0]).to have_content(coaster.name)
     expect(page.all('li')[1]).to have_content(spinny.name)
     expect(page.all('li')[2]).to have_content(comet.name)
